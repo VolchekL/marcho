@@ -1,8 +1,132 @@
-.menu {
-    margin: 0;
-    padding: 0;
-}
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+@import 'media';
 
 body {
-    background-color: #cd11ea;
+    color: $default;
+    font-size: 16px;
+    line-height: 26px;
+    @extend %quicksand-500;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[class] {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    padding: 40px 0; 
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.menu {
+    &__list {
+        display: flex;
+    }
+    &__list-item + .menu__list-item {
+        padding-left: 35px;
+    }
+    &__list-link {
+        color: $title;
+        padding-bottom: 1px;
+        transition: all .3s;
+        @extend %quicksans-400;
+        &:hover {
+            color: $accent;
+            border-bottom: 1px solid $accent;
+            @extend %quicksans-500;
+        }
+    }
+    &__list-link--activ {
+        color: $accent;
+        border-bottom: 1px solid $accent;
+        @extend %quicksans-500;
+    }
+}
+
+.user-nav {
+    display: flex;
+    &__link {
+        position: relative;
+    }
+    &__link + .user-nav__link {
+        padding-left: 25px;
+    }
+    &__num {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $accent;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        top: -9px;
+        right: -9px;
+        z-index: 10; /* Чтобы был поверх иконки */
+    }
 }
