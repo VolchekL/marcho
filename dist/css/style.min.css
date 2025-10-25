@@ -6,14 +6,24 @@
   font-weight: 500;
 }
 
-.footer-top__title, .menu__list-link {
+.footer-top__title, .menu__list-link, .top-slider__link, .footer-top__form-btn {
   font-family: "Roboto-Regular", sans-serif;
   font-weight: 400;
 }
 
-.menu__list-link:hover {
+.top-slider__title, .menu__list-link:hover {
   font-family: "Roboto-Bold", sans-serif;
   font-weight: 700;
+}
+
+.top-slider__link, .footer-top__form-btn {
+  padding: 14px 35px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #fe3e57;
+  -webkit-box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+          box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+  padding: 12px 26px;
 }
 
 @font-face {
@@ -382,12 +392,6 @@ footer {
 }
 .footer-top__form-btn {
   border: none;
-  background-color: #fe3e57;
-  color: #fff;
-  text-transform: uppercase;
-  padding: 12px 26px;
-  -webkit-box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
-          box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
   cursor: pointer;
 }
 
@@ -408,4 +412,86 @@ footer {
   display: inline;
   margin-left: 25px;
   vertical-align: middle;
+}
+
+.top-slider {
+  background-image: url("/app/images/slider/top-slider-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #f6f6f6;
+  padding-top: 65px;
+}
+.top-slider__container {
+  max-width: 1560px;
+}
+.top-slider__content {
+  padding-left: 175px;
+  padding-top: 125px;
+}
+.top-slider__item {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.top-slider__title {
+  max-width: 670px;
+  font-size: 58px;
+  line-height: 68px;
+  color: #29282d;
+  margin-bottom: 35px;
+}
+.top-slider__text {
+  margin-bottom: 55px;
+  max-width: 470px;
+}
+.top-slider__link {
+  padding: 14px 36px;
+}
+.top-slider .slick-dots {
+  position: absolute;
+  top: calc(100% - 70px); /* Сдвиг точек на 70px вверх от нижней границы слайдера */
+  bottom: auto; /* Отмена стандартного позиционирования bottom */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 0; /* Сброс margin-top */
+}
+.top-slider .slick-dots li {
+  padding: 0 5px;
+  line-height: 0;
+}
+.top-slider .slick-dots li button {
+  padding: 0;
+  font-size: 0;
+  background-color: transparent;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  position: relative;
+}
+.top-slider .slick-dots li button::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #8d8d8d;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.top-slider .slick-dots li.slick-active button {
+  border-color: #fe3e57;
+}
+.top-slider .slick-dots li.slick-active button::before {
+  background-color: #fe3e57;
 }
