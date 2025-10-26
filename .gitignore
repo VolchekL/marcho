@@ -21,8 +21,11 @@ idea/*
 .vscode
 .*.sublime*
 npm-debug.*
-dist/
 node_modules/
 package-lock.json
 app/css/*.scss
+dist/*
+!dist/index.html
+!css/style.min.css
+!js/main.min.js
 !app/images/src/1.png
